@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de PDF</title> 
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="./chartScript.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="box" >
+      <div class="first-title">
+        <h2>informe de excelencia innovación ceeis clm</h2>
+        <div class="logos">
+          <img src="data:image/png;base64, <%= ceeis %>" alt="logo">     
+        </div>
+      </div>
+      <div class="pdf-title">
+        <h2>cuestionario de innovación</h2>
+      </div>
+    </div>
+  
+    <div class="box second-pdf-table">
+        <h2 class="orange uppercase"> modelo de negocio -lean canvas</h2>
+        <p>El comité evaluador lo examinará y calificará para el rating final</p>
+
+        <div class="my-table ">
+            <div class="first-row"> 
+                <div>
+                    <h3 class="table-req"> Socios clave </h3>
+                     <p class="blue table-res"> <%= postData.lean_canvas.key_partners %></p>
+                 </div>
+                <div class="colum second-colum">
+                    <div>
+                        <h3 class="table-req"> Actividades clave </h3>
+                         <p class="blue table-res"> <%= postData.lean_canvas.key_activities %></p>
+                    </div>
+                    <div>
+                        <h3 class="table-req"> Recursos clave </h3>
+                         <p class="blue table-res"> <%= postData.lean_canvas.key_resources %></p>
+                    </div>
+                    
+                </div>
+
+                    <div>
+                        <h3 class="table-req"> Procupestas de valor </h3>
+                        <p class="blue table-res"> Plataforma eficiente
+                            y segura para financiamiento de startups
+                        </p>
+                    </div>
+
+                    <div class="colum second-colum">
+                        <div>
+                            <h3 class="table-req"> Relaciones con los clientes </h3>
+                             <p class="blue table-res"> <%= postData.lean_canvas.clients_relations %></p>
+                        </div>
+                        <div>
+                            <h3 class="table-req"> Canales </h3>
+                             <p class="blue table-res"> plataforma online, redes sociales
+                                ,eventos
+                             </p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div>
+                            <h3 class="table-req"> Segmentos de clientes </h3>
+                             <p class="blue table-res"> <%= postData.lean_canvas.clients_segments %></p>
+                        </div>
+                    </div>
+                </div>
+            <div class="second-row">
+                
+                    <div>
+                        <h3 class="table-req"> Estructura de costes </h3>
+                         <p class="blue table-res"> <%= postData.lean_canvas.costs %></p>
+                    </div>
+                
+                    <div>
+                        <h3 class="table-req"> Lineas de ingresos </h3>
+                         <p class="blue table-res"> <%= postData.lean_canvas.incomes %></p>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

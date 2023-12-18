@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de PDF</title> 
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="./chartScript.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="box" >
+      <div class="first-title">
+        <h2 >informe de excelencia innovación ceeis clm</h2>
+        <div class="logos">
+          <img src="data:image/png;base64, <%= ceeis %>" alt="logo">     
+        </div>
+      </div>
+      <div class="pdf-title">
+        <h2>cuestionario de innovación</h2>
+      </div>
+    </div>
+    <h3 class="main-title">informacion general</h3>
+    
+      <div class="box">
+        <h3 class="orange">Persona de contacto</h3>
+        <div class="contactInfo " id="contactInfo ">
+          <% Object.entries(postData.contact_person).forEach(([key, value]) => { %>
+            <div class="column">
+              <% if (key === 'name') { %>
+                <h3>Nombre y apellidos:</h3>
+                <p><%= `${postData.contact_person.name} ${postData.contact_person.last_name}` %></p>
+              <% } else if (key === 'last_name') { %>
+               
+              <% } else if (key === 'role') { %>
+                <h3>Cargo:</h3>
+                <p><%= value %></p>
+              <% } else if (key === 'phone') { %>
+                <h3>Teléfono:</h3>
+                <p><%= value %></p>
+              <% } else if (key === 'email') { %>
+                <h3>Correo electrónico:</h3>
+                <p><%= value %></p>
+              <% } else { %>
+                <h3><%= key %>:</h3>
+                <p><%= value %></p>
+              <% } %>
+            </div>
+          <% }); %>
+      </div>
+      </div>
+      
+
+    <div class="box width-100">
+      <div class="flex-between">
+        <h3 class="orange uppercase"> datos de la empresa </h3>
+        <img class="logo" src="<%= postData.company_info.logo %>" alt="logo de la empresa">
+      </div>
+      <div class="width-100 margin-right contactInfo flex-between"> 
+        <div class="width-20 column">
+          <h3>CIF</h3>
+          <p><%= postData.company_info.cif %></p>
+        </div>
+        <div class="width-20 column">
+          <h3>Razón social</h3>
+          <p><%= postData.company_info.business_name %></p>
+        </div>
+        <div class="width-20 column">
+          <h3>Nombre comercial</h3>
+          <p><%= postData.company_info.commercial_name %></p>
+        </div>
+      </div>
+
+      <div class="width-100 margin-right contactInfo flex-between border-bot"> 
+        <div class="width-20 column">
+          <h3>Dirección</h3>
+          <p><%= postData.company_info.address %></p>
+        </div>
+        <div class="width-20 column">
+          <h3>CP</h3>
+          <p><%= postData.company_info.cp %></p>
+        </div>
+        <div class=" width-20 column">
+          <h3>Provincia</h3>
+          <p><%= postData.company_info.province %></p>
+        </div>
+        <div class="width-20 column">
+          <h3>Localidad</h3>
+          <p><%= postData.company_info.cirty %></p>
+        </div>
+      </div>
+
+      <div class="width-100 margin-right contactInfo flex-between border-bot"> 
+        <div class="width-20 column">
+          <h3>Teléfono</h3>
+          <p><%= postData.company_info.phone %></p>
+        </div>
+        <div class="width-20 column">
+          <h3>Página web</h3>
+          <p><%= postData.company_info.web %></p>
+        </div>
+        <div class="width-20 column">
+          <h3>Correo electrónico</h3>
+          <p><%= postData.company_info.email %></p>
+        </div>
+        <div class="width-20 column">
+          <h3>Sector</h3>
+          <p><%= postData.company_info.sector %></p>
+        </div>
+      </div>
+
+      <div class="margin-right contactInfo flex-between"> 
+        <div class="width-20 column">
+          <h3>Actividad principal de la empresa:</h3>
+          <p><%= postData.company_info.main_activity %></p>
+      
+          <h3>CNAE</h3>
+          <p><%= postData.company_info.cnae %></p>
+        </div>
+        <div class="width-20 column">
+          <h3>Equipo</h3>
+          <% let totalTeam = postData.company_info.team.male + postData.company_info.team.female; %>
+          <p><%= totalTeam %></p>
+          
+          <div class="flex-between">
+            <div class="column">
+              <h3 class="blue">Hombres</h3>
+              <p><%= Math.round((postData.company_info.team.male / totalTeam) * 100) %> %</p> 
+            </div>
+            <div class="column">
+              <h3 class="blue">Mujeres</h3>
+              <p><%= Math.round((postData.company_info.team.female / totalTeam) * 100)%> %</p> 
+            </div>
+          </div>
+        </div>
+
+        <div class="persons-container">
+            <div class="persons">
+              <% for (let i = 0; i < resultadoHombres; i++) { %>
+                
+                <img src="data:image/png;base64, <%= theMan %>" alt="hombre">
+                <% } %>             
+            </div>          
+              <div class="persons">              
+                <% for (let i = 0; i < resultadoMujeres; i++) { %>
+                  
+                  <img src="data:image/png;base64, <%= theGirl %>" alt="mujer">
+                  <% } %>
+                </div>                  
+            </div>
+      </div>
+    </div>
+    <div class="grafics">
+          <div class="box founders"> 
+            <h3 class="orange uppercase">participacion o accionariado</h3>
+
+            <p>privada sin participacion extranjera</p>
+            <div class="flex-between">  
+              <div class="column">
+                <h3 class="blue">Founders</h3>
+                <p> <%= postData.shares.founders %> %</p>
+              </div>
+              <div class="column">
+                <h3 class="blue">Investors</h3>
+                <p> <%= postData.shares.investors %> %</p>
+              </div>
+            </div>
+              <progress class="progress-bar" max="100" value="<%= postData.shares.founders %>"></progress>
+            <h3 class="orange uppercase">grupo empresarial</h3>
+            <p class="blue">País donde se halla la empresa matriz</p>
+            <p> <%= postData.company_info.business_group.country %> </p>
+          </div>
+          <div class="box myChartContainer ">
+            <div class=" first-grafic-data">
+              
+            
+            <div class="display-flex">
+            <h3 class="orange uppercase">datos económicos </h3>
+            <p class="orange">(valores sin incluir IVA)</p>
+            </div>
+            <div class="flex-between ">
+              <div class="column">
+                <h4 class="blue margin-top">Cifra de negocios (2022)</h4>
+                <p class="margin-top"> <%= postData.financials.billing / 1000 %> K€ </p>
+              </div>
+              <div class="column">
+                <h4 class="blue margi">Total Clientes</h4>
+                <% 
+                  let totalClients = 0;
+                  for (let client in postData.financials.clients) {
+                    totalClients += postData.financials.clients[client];
+                  }
+                %>
+                <p  class="margin-top"><%= totalClients %></p>
+              </div>
+              </div>
+
+            </div>
+             <canvas class="my-grafic" id="myChartContainer">
+
+             </canvas>
+            </div>
+    </div>
+
+   
+  </div>
+</body>
+</html>

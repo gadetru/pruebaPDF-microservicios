@@ -1,0 +1,279 @@
+/* ---------------SETEO INICIAL------------------ */
+
+
+* {
+    margin: 0;
+    padding: 0;
+  
+}
+
+html,body {
+
+
+    height: 100%;
+    background: linear-gradient(90deg, rgba(238,80,45,1) 0%, rgba(8,85,163,1) 100%);
+}
+.container{
+padding: 20px;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+
+} 
+.colunm{
+    display: flex;
+    flex-direction: column;
+
+}
+.with-20{
+    width: 120px;
+}
+
+.with-100{
+    width: 100%;
+}
+.orange{
+    color: #F04E2C;
+}
+.blue{
+    color:  #0655A5;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+.flex-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.border-bot{
+    border-bottom: 1px solid gray;
+}
+.margin-right{
+    margin-right: 80px;
+}
+.display-flex{
+    display: flex;
+}
+/* ----------------PRIMER BLOQUE BLANCO------------ */
+
+.box{
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 15px 15px 5px 15px;
+    margin: 5px 5px 0px 5px;
+
+}
+
+.first-title{
+
+    display: flex;
+    justify-content: space-between;
+}
+.first-title>div{
+    display: flex;
+}
+.first-title>h2{
+    text-transform: uppercase;
+    width: fit-content;
+    font-size: 14px;
+    font-weight: 200;
+    color: #FFFFFF;
+    background-color: #0655A5;
+    border-radius: 20px;
+    padding: 5px 15px 5px 15px;
+   
+
+}
+.logos>img{
+    width: 32px;
+    height: fit-content;
+    
+}
+.pdf-title>h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: bold;
+    color: #0655A5;
+    margin:30px 0 0 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.main-title{
+    color: #FFFFFF;
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px 0 5px 0;
+}
+
+/* ------------Persona contacto--------- */
+
+.contactInfo{
+    display: flex;
+    padding: 15px 0 25px 0;
+    justify-content: space-between;
+    
+}
+.contactInfo>div>h3{
+    color: #0655A5;
+    font-weight: bold;
+    font-size: 16px;
+    
+}
+.contactInfo>div>p{
+    color: #131313;
+    font-size: 16px;
+}
+
+/* ---------company_info--------- */
+
+.logo{
+    width: 60px;
+    height: 60px;
+}
+
+.persons-container{
+    display: flex;
+    width: 100px;
+
+}
+
+.persons{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60px;
+}
+.persons>img{
+    width: 20px;
+    height: 20px;
+}
+
+/* -------------------graficas finales----------- */
+
+.grafics{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 350px;
+    box-sizing: border-box;
+}
+.founders{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    height: 100%;
+    justify-content: space-around;
+    box-sizing: border-box;
+    
+}
+
+/* la barrita de los coj... */
+progress{
+    border-radius: 50px;
+    height: 60px;
+    width: 90%;
+    box-shadow: 1px 1px 4px(0,0,0,0.2);
+}
+progress::-webkit-progress-bar{
+    background-color:aquamarine;
+    border-radius: 50px;
+}
+progress::-webkit-progress-value{
+    background-color: #0655A5;
+    border-radius: 50px;
+}
+/* ---------------------donut------------------ */
+
+
+.myChartContainer{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 55%;
+    box-sizing: border-box;
+
+}
+.margin-top{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.first-grafic-data{
+    height: 40%;
+}
+.my-grafic{
+    width: 60% !important;
+    height: 60% !important;
+}
+
+/* -----------------estilos 2º PDF------------- */
+/* -----------------estilos 2º PDF------------- */
+
+.second-pdf-table {
+    margin-top: 60px;
+    height: 23cm;
+}
+
+.second-pdf-table>h2 {
+    margin: 10px 0 5px 5px;
+}
+
+.second-pdf-table>p {
+    margin: 10px 0 35px 5px;
+    font-weight: 400;
+}
+
+.my-table {
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.first-row {
+    display: flex;
+    width: 100%;
+    height: 400px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.first-row>div {
+    width: 20%;
+    border: 1px solid black;
+    box-sizing: border-box;
+    margin: 0; /* Agregado para eliminar márgenes */
+}
+
+.second-colum>div {
+    height: 50%;
+    border: 1px solid black;
+    box-sizing: border-box;
+    margin: 0; /* Agregado para eliminar márgenes */
+}
+
+.second-row {
+    display: flex;
+    width: 100%;
+    height: 150px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.second-row>div {
+    width: 50%;
+    border: 1px solid black;
+    box-sizing: border-box;
+    margin: 0; /* Agregado para eliminar márgenes */
+}
+
+.table-req {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 200;
+    margin: 10px 0 20px 5px;
+}
+
+.table-res {
+    font-size: 14px;
+    margin: 5px 0 5px 5px;
+}
